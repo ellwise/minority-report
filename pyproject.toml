@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+authors = [{name = "Elliott Wise"}]
+description = "Mouse control with hand-tracking via webcam"
+dependencies = [
+    "mediapipe",
+    "opencv-python",
+    "typer",
+]
+name = "minority-report"
+readme = "README.md"
+requires-python = ">=3.8"
+version = "0.0"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "isort",
+    "ssort",
+]
+
+[project.scripts]
+minority-report = "minority_report.cli:app"
+
+[tool.black]
+line-length = 99
+
+[tool.isort]
+profile = "black"
+
+[tool.setuptools]
+packages = ["minority_report"]
